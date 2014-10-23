@@ -1,0 +1,1 @@
+JimboByeBye.ApplicationAdapter = DS.FixtureAdapter;

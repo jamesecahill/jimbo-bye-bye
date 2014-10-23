@@ -1,0 +1,46 @@
+1. Ascii hex encryption
+
+var out = "";
+for (var i=0; i<string.length; i = i + 2) {
+    var c = string.substring(i, i+2);
+    var g = parseInt(c, 16);
+    out = out + String.fromCharCode(g/2);
+}
+out;
+
+2. Base32 Stuff
+
+var chars = string.split(" ");
+var out = "";
+for (var i=0; i<chars.length; i++) {
+    out += String.fromCharCode(parseInt(chars[i], 32));
+}
+out;
+
+3. Word counts
+
+var words = string.split(" ");
+var counts = {};
+for (var i=0; i<words.length; i++) {
+    var w = words[i];
+    if (counts[w] === undefined) {
+       counts[w] = 1;
+    } else {
+        counts[w]++;
+    }
+}
+
+var wordarr = [];
+for (var w in counts) {
+    wordarr.push(w);
+}
+var sorted = wordarr.sort(function(w1, w2) {
+    if (counts[w2] < counts[w1]) {
+        return 1;
+    } else if (counts[w2] > counts[w1]) {
+        return -1;
+    } else {
+        return 0;
+    }
+});
+sorted[sorted.length-1] + " " + sorted[sorted.length-2];
