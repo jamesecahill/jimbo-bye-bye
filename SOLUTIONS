@@ -17,6 +17,10 @@ for (var i=0; i<chars.length; i++) {
 }
 out;
 
+- OR - 
+
+string.replace(/\s/g, "").replace(/.{2}/g, function(m) { return String.fromCharCode(parseInt(m, 32))});
+
 3. Word counts
 
 var words = string.split(" ");
