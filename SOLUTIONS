@@ -8,6 +8,12 @@ for (var i=0; i<string.length; i = i + 2) {
 }
 out;
 
+- OR - 
+
+string.replace(/.{2}/g, function(m) {
+    return String.fromCharCode(parseInt(m, 16) / 2);
+})
+
 2. Base32 Stuff
 
 var chars = string.split(" ");
