@@ -54,3 +54,24 @@ var sorted = wordarr.sort(function(w1, w2) {
     }
 });
 sorted[sorted.length-1] + " " + sorted[sorted.length-2];
+
+- OR - 
+
+var counts = {}, one, two;
+string.split(" ").forEach(function(w) {
+  if (counts[w] === undefined) {
+      counts[w] = 0;
+  }
+  counts[w]++;
+  if (one === undefined) {
+      one = w;
+  } else {
+      if (two === undefined || counts[w] > counts[one]) {
+          two = one;
+          one = w;
+      } else if (counts[w] > counts[two] && w != one) {
+          two = w;
+      }
+  }
+});
+one + " " + two;
